@@ -55,6 +55,7 @@
         # Templates en dernier
         'views/templates.xml',
         'views/work_program_layout_controller.xml',
+        'views/reponses_templates.xml',
     ],
 
     # Données de démonstration
