@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 import calendar
-import locale
 import logging
 from email.policy import default
 from datetime import datetime, date, timedelta
@@ -190,11 +189,9 @@ class WorkProgram(models.Model):
             })
 
     def _get_default_current_month(self):
-        locale.setlocale(locale.LC_TIME, 'fr_FR.UTF-8')
         return _(calendar.month_name[int(datetime.now().strftime("%m"))])
 
     def _get_default_current_month_selection(self):
-        locale.setlocale(locale.LC_TIME, 'fr_FR.UTF-8')
         return [(_(calendar.month_name[i]), _(calendar.month_name[i])) for i in range(1, 13)]
 
     my_month = fields.Selection(
